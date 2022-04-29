@@ -30,7 +30,6 @@ public class MarkdownParse {
                 break;
             }
             int space = markdown.indexOf(" ", currentIndex);
-            // && space < openParen
             if (openParen == closeBracket + 1 && exclamationPoint != openBracket - 1 && space < openParen) {
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             }

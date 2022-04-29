@@ -109,7 +109,7 @@ public void test9() throws IOException {
         String content = Files.readString(fileName);
         ArrayList<String> links = md.getLinks(content);
         ArrayList<String> testArray = new ArrayList<String>();
-        testArray.add("no links found");
+        testArray.add("is_technically_a_link");
 assertEquals(testArray, links);
 }
 }
