@@ -101,4 +101,15 @@ public void test8() throws IOException {
         testArray.add("no links found");
 assertEquals(testArray, links);
 }
+
+@Test
+public void test9() throws IOException {
+        MarkdownParse md = new MarkdownParse();
+        Path fileName = Path.of("test-file9.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = md.getLinks(content);
+        ArrayList<String> testArray = new ArrayList<String>();
+        testArray.add("no links found");
+assertEquals(testArray, links);
+}
 }
