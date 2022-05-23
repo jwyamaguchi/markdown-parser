@@ -112,4 +112,41 @@ public void test9() throws IOException {
         testArray.add("is_technically_a_link");
 assertEquals(testArray, links);
 }
+
+@Test
+public void test10() throws IOException {
+        MarkdownParse md = new MarkdownParse();
+        Path fileName = Path.of("snippet1.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = md.getLinks(content);
+        ArrayList<String> testArray = new ArrayList<String>();
+        testArray.add("`google.com");
+        testArray.add("google.com");
+        testArray.add("ucsd.edu");
+assertEquals(testArray, links);
+}
+
+@Test
+public void test11() throws IOException {
+        MarkdownParse md = new MarkdownParse();
+        Path fileName = Path.of("snippet2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = md.getLinks(content);
+        ArrayList<String> testArray = new ArrayList<String>();
+        testArray.add("a.com");
+        testArray.add("a.com(())");
+        testArray.add("example.com");
+assertEquals(testArray, links);
+}
+
+@Test
+public void test12() throws IOException {
+        MarkdownParse md = new MarkdownParse();
+        Path fileName = Path.of("snippet3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = md.getLinks(content);
+        ArrayList<String> testArray = new ArrayList<String>();
+        testArray.add("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+assertEquals(testArray, links);
+}
 }
