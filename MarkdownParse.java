@@ -34,7 +34,7 @@ public class MarkdownParse {
                 break;
             }
             if (openParen == closeBracket + 1 && exclamationPoint != openBracket - 1) {
-            toReturn.add(markdown.substring(openParenPlusSpace + 1, closeParen));
+            toReturn.add((markdown.substring(openParenPlusSpace + 1, closeParen)).trim());
             }
             currentIndex = closeParen + 1;
         }
