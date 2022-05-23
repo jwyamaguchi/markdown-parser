@@ -33,7 +33,6 @@ public class MarkdownParse {
             if (closeParen == -1) {
                 break;
             }
-            System.out.println(markdown.substring(openParen + 1, closeParen));
             if (openParen == closeBracket + 1 && exclamationPoint != openBracket - 1) {
             toReturn.add(markdown.substring(openParenPlusSpace + 1, closeParen));
             }
