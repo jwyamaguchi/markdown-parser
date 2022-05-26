@@ -149,4 +149,41 @@ public void test12() throws IOException {
         testArray.add("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
 assertEquals(testArray, links);
 }
+
+@Test
+public void test13() throws IOException {
+        test md = new test();
+        Path fileName = Path.of("snippet1.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = md.getLinks(content);
+        ArrayList<String> testArray = new ArrayList<String>();
+        testArray.add("`google.com");
+        testArray.add("google.com");
+        testArray.add("ucsd.edu");
+assertEquals(testArray, links);
+}
+
+@Test
+public void test14() throws IOException {
+        test md = new test();
+        Path fileName = Path.of("snippet2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = md.getLinks(content);
+        ArrayList<String> testArray = new ArrayList<String>();
+        testArray.add("a.com");
+        testArray.add("a.com(())");
+        testArray.add("example.com");
+assertEquals(testArray, links);
+}
+
+@Test
+public void test15() throws IOException {
+        test md = new test();
+        Path fileName = Path.of("snippet3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = md.getLinks(content);
+        ArrayList<String> testArray = new ArrayList<String>();
+        testArray.add("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+assertEquals(testArray, links);
+}
 }
